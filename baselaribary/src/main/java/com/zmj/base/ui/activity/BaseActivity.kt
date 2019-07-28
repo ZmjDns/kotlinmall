@@ -10,17 +10,16 @@ import android.support.v7.app.AppCompatActivity
  * Time : 2019/7/27
  * Description :
  */
-abstract class BaseActivity: AppCompatActivity() {
+open class BaseActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(layoutId)
+        //setContentView(layoutId)
     }
 
 
 
-    protected  abstract val layoutId: Int
 
 
     override fun onDestroy() {
