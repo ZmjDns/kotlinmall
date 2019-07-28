@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zmj.usercenter">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <activity android:name=".ui.activity.Register">
+        </activity>
+
+    </application>
+
+
+</manifest>
+
