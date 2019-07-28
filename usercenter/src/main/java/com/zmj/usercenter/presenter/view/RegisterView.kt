@@ -1,4 +1,4 @@
-package com.zmj.base.presenter
+package com.zmj.usercenter.presenter.view
 
 import com.zmj.base.presenter.view.BaseView
 
@@ -9,7 +9,6 @@ import com.zmj.base.presenter.view.BaseView
  * Time : 2019/7/28
  * Description :
  */
-open class BasePresenter<T: BaseView> {
-
-    lateinit var mView: T
+interface RegisterView: BaseView {
+    fun onRegisterResult(result: Boolean)
 }

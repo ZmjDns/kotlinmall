@@ -10,7 +10,7 @@ import com.zmj.base.presenter.view.BaseView
  * Time : 2019/7/28
  * Description :
  */
-class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(),BaseView {
+open class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(),BaseView {
     override fun showLoading() {
     }
 
