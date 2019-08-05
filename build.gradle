@@ -3,6 +3,11 @@
 buildscript {
     ext.kotlin_version = '1.3.41'  //解决WARNING:API 'variant.getPackageLibrary()' is obsolete and has been replaced with 'variant.getPackageLibraryProvider()'.
     //ext.kotlin_version = '1.3.31'
+    ext.rxAndroid_version = '2.1.0'
+    ext.rxKotlin_version = '2.3.0'
+    ext.okhttp_version = '3.14.0'
+    ext.retrofit_version = '2.4.0'
+
     repositories {
         google()
         jcenter()
