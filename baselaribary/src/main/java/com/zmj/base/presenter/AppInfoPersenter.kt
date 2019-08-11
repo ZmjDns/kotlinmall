@@ -10,4 +10,11 @@ import com.zmj.base.presenter.view.BaseView
  * Description : 获取app信息Persenter
  */
 class AppInfoPersenter:BasePresenter<BaseView>() {
+    fun getAppInfo(){
+
+    }
+
+    fun downloadNewAppVersion(){
+
+    }
 }
