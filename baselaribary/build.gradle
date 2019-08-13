@@ -34,6 +34,7 @@ dependencies {
     api 'com.android.support:appcompat-v7:28.0.0'
 
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroution"
     api "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
     api "io.reactivex.rxjava2:rxkotlin:$rxKotlin_version"
 
