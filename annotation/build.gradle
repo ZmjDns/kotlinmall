@@ -1,0 +1,16 @@
+import javax.tools.JavaCompiler
+
+//注解使用java小项目（小咖啡）
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+//避免控制台输出乱码
+tasks.withType(JavaCompiler){
+    options.encoding = "UTF-8"
+}
+
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
