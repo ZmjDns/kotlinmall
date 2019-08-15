@@ -1,7 +1,19 @@
+import javax.tools.JavaCompiler
+
 apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc4'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+
+    //引入annotation注解项目，处理注解
+    implementation project(':annotation')
+}
+
+tasks.withType(JavaCompiler){
+    options.encoding = "UTF-8"
 }
 
 sourceCompatibility = "7"
