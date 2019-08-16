@@ -31,3 +31,21 @@ fun getTypeNumber(): String{
 fun getVersion(context: Context): Int{
     return context.packageManager.getPackageInfo(context.packageName,0).versionCode
 }
+
+fun getAndroidVersion(): String{
+    var infoStr = ""
+    infoStr += "MANUFACTURER: ${Build.MANUFACTURER} \n"
+    infoStr += "MODEL: ${Build.MODEL} \n"
+    infoStr += "SDK: ${Build.VERSION.SDK_INT} \n"
+    infoStr += "VERSION.RELEASE: ${Build.VERSION.RELEASE} \n"
+    infoStr += "PRODUCT: ${Build.PRODUCT} \n"
+    infoStr += "CPU_ABI: ${Build.CPU_ABI} \n"
+    infoStr += "TAGS: ${Build.TAGS} \n"
+    infoStr += "VERSION_CODES.BASE: ${Build.VERSION_CODES.BASE} \n"
+    infoStr += "DEVICE: ${Build.DEVICE} \n"
+    infoStr += "DISPLAY: ${Build.DISPLAY} \n"
+    infoStr += "BOARD: ${Build.BOARD} \n"
+    infoStr += "ID: ${Build.ID} \n"
+    infoStr += "USER: ${Build.USER}"
+    return infoStr
+}
