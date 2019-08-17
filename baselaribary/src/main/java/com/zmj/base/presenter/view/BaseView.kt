@@ -1,5 +1,7 @@
 package com.zmj.base.presenter.view
 
+import com.zmj.base.data.entry.AppInfo
+
 /**
  * Author : Zmj
  * Blog : https://blog.csdn.net/Zmj_Dns
@@ -10,5 +12,9 @@ package com.zmj.base.presenter.view
 interface BaseView {
     fun showLoading()
     fun hideLoading()
-    fun onError()
+    fun onError(throwable: Throwable)
+}
+
+interface AppVersionView:BaseView{
+    fun onGetVersion(appInfo: AppInfo)
 }
