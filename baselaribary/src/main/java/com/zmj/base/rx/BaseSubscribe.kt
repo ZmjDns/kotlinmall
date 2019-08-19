@@ -11,7 +11,6 @@ import org.reactivestreams.Subscription
  * Description : 重写Subscribe
  */
 open class BaseSubscribe<T>: Subscriber<T> {
-
     override fun onComplete() {
 
     }
