@@ -11,13 +11,14 @@ import com.zmj.base.presenter.view.BaseView
  * Description :
  */
 open class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(),BaseView {
+
+    override fun onError(throwable: Throwable) {
+    }
+
     override fun showLoading() {
     }
 
     override fun hideLoading() {
-    }
-
-    override fun onError() {
     }
 
     lateinit var mPresenter: T
