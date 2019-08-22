@@ -21,8 +21,8 @@ abstract class BaseDialog(context: Context): Dialog(context) {
 
         setContentView(R.layout.base_dialog)
 
-        ll_body.addView(getBodyView())
+        ll_body.addView(bodyView)
     }
 
-    abstract fun getBodyView(): View
+    abstract var bodyView: View
 }
