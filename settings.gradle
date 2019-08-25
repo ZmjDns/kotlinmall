@@ -1,1 +1,1 @@
-include ':app', ':baselaribary', ':provider', ':usercenter'
+include ':app', ':baselaribary', ':provider', ':usercenter', ':annotation', ':compiler'
