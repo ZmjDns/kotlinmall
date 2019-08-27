@@ -5,6 +5,7 @@ import com.zmj.base.data.net.IResponse
 import com.zmj.base.model.AppInfoModel
 import com.zmj.base.presenter.view.AppVersionView
 import com.zmj.base.presenter.view.BaseView
+import com.zmj.base.presenter.view.IAppUpdateView
 
 /**
  * Author : Zmj
@@ -29,7 +30,20 @@ class AppInfoPersenter:BasePresenter<AppVersionView>() {
         })
     }
 
-    fun downloadNewAppVersion(){
+    //apk下载
+    fun downloadNewAppVersion(newVersion: String,savePath: String){
+        appInfoModel.downloadNewVersionApk(newVersion,savePath,object: IAppUpdateView{
+            override fun downloadProcess(process: Int) {
 
+            }
+            override fun onDownloaded(apkPath: String) {
+
+            }
+
+            override fun onFailed(throwable: Throwable) {
+
+            }
+
+        })
     }
 }
