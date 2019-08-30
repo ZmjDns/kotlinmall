@@ -1,14 +1,9 @@
 package com.zmj.usercenter.presenter
 
+import com.zmj.base.dbproxy.DbProxy
 import com.zmj.base.presenter.BasePresenter
-import com.zmj.base.rx.BaseSubscribe
 import com.zmj.usercenter.presenter.view.RegisterView
 import com.zmj.usercenter.service.impl.UserServiceImpl
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import org.reactivestreams.Subscriber
-import org.reactivestreams.Subscription
-import java.util.function.Consumer
 
 /**
  * Author : Zmj
@@ -27,7 +22,10 @@ class RegisterPresenter: BasePresenter<RegisterView>(){
         /*userService.register(mobile,verifyCode,pwd)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())*/
+        val dbProxy = DbProxy()
 
+        dbProxy.queryData()
+        dbProxy.deleteData()
 
         mView.onRegisterResult(true)
     }
