@@ -5,9 +5,12 @@ import android.widget.Toast
 import com.zmj.base.ui.activity.BaseActivity
 import com.zmj.base.ui.activity.BaseMvpActivity
 import com.zmj.usercenter.R
+import com.zmj.usercenter.injection.component.DaggerUserComponent
+import com.zmj.usercenter.injection.model.UserModule
 import com.zmj.usercenter.presenter.RegisterPresenter
 import com.zmj.usercenter.presenter.view.RegisterView
 import kotlinx.android.synthetic.main.register_act.*
+import javax.inject.Inject
 
 /**
  * Author : Zmj
@@ -30,10 +33,16 @@ class RegisterActivity: BaseMvpActivity<RegisterPresenter>(),RegisterView{
 
         setContentView(R.layout.register_act)
 
-        mPresenter = RegisterPresenter()
-        mPresenter.mView = this
+        //mPresenter = RegisterPresenter()
+        //mPresenter.mView = this
+        initInjection()
 
         register.setOnClickListener { mPresenter.register("","","") }
+    }
+
+    private fun initInjection() {
+        DaggerUserComponent.builder().userModule(UserModule()).build().inject(this)
+        mPresenter.mView = this
     }
 
 

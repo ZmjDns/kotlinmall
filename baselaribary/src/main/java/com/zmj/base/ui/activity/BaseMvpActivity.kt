@@ -2,6 +2,7 @@ package com.zmj.base.ui.activity
 
 import com.zmj.base.presenter.BasePresenter
 import com.zmj.base.presenter.view.BaseView
+import javax.inject.Inject
 
 /**
  * Author : Zmj
@@ -21,6 +22,7 @@ open class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(),BaseView {
     override fun hideLoading() {
     }
 
+    @Inject     //引入Dagger
     lateinit var mPresenter: T
 
 }
