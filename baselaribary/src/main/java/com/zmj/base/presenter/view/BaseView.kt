@@ -18,3 +18,9 @@ interface BaseView {
 interface AppVersionView:BaseView{
     fun onGetVersion(appInfo: AppInfo)
 }
+
+interface IAppUpdateView{
+    fun downloadProcess(process: Int)
+    fun onDownloaded(apkPath: String)
+    fun onFailed(throwable: Throwable)
+}
