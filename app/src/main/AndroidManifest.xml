@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.zmj.kotlinmall">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!--定义发送广播的权限-->
+    <permission android:name="com.zmj.kotlinmall.SEND_NET_INFO" android:protectionLevel="signature"/>
+    <!--声明发送广播的权限-->
+    <uses-permission android:name="com.zmj.kotlinmall.SEND_NET_INFO"/>
+    <!--定义发送广播的权限-->
+    <permission android:name="com.zmj.kotlinmall.RECEIVE_NET_INFO" android:protectionLevel="signature"/>
+    <!--定义发送广播的权限-->
+    <uses-permission android:name="com.zmj.kotlinmall.RECEIVE_NET_INFO"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -9,8 +20,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.zmj.usercenter.ui.activity.RegisterActivity">
+
+        <receiver android:name=".broadcast.NetChangeReceiver"
+                  android:permission="com.zmj.kotlinmall.RECEIVE_NET_INFO"
+                  android:exported="true">
             <intent-filter>
+                <action android:name="com.zmj.kotlinmall.MY_ACTION"/>
+                <!--action android:name="android.net.conn.CONNECTIVITY_CHANGE"/-->
+                <!--action android:name="android.net.wifi.WIFI_STATE_CHANGED"/-->
+                <!--action android:name="android.net.wifi.STATE_CHANGE"/-->
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".broadcast.SendBroadCastActivity">
+            <intent-filter android:priority="100"> <!--设置传播的优先级，越高越容易被接收到-->
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -21,6 +44,15 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
+
+        <activity android:name="com.zmj.usercenter.ui.activity.RegisterActivity"/>
+        <activity android:name=".binder.BinderTestActivity"/>
+
+        <service android:name=".binder.RemoteService"
+                 android:enabled="true"
+                 android:exported="true"
+                 android:process=":remote"/>
     </application>
+
 
 </manifest>
