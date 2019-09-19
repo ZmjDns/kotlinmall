@@ -10,15 +10,14 @@ import android.widget.Toast
  * Author : Zmj
  * Blog : https://blog.csdn.net/Zmj_Dns
  * DitHub : https://github.com/ZmjDns
- * Time : 2019/9/18
+ * Time : 2019/9/19
  * Description :
  */
-class NetChangeReceiver: BroadcastReceiver(){
+//接收网络变化的广播接收器
+class ReceiveNetBroadcastByStatic: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-
-        Log.i("NetChangeReceiver","接收到广播了，action：${intent?.action}")
-        Toast.makeText(context,"网络改变",Toast.LENGTH_SHORT).show()
-        //阻断有序广播的继续发送
-        //abortBroadcast()
+        //打印接收到的action
+        Log.i("staticRegister","Received action： ${intent?.action}")
+        Toast.makeText(context,"收到广播 ${intent?.action}", Toast.LENGTH_SHORT).show()
     }
 }
