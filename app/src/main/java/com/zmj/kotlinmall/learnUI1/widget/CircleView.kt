@@ -128,5 +128,7 @@ class OvalView: View{
         paint.style = Paint.Style.FILL_AND_STROKE
         canvas?.drawOval(220f,0f,420f,160f,paint)
 
+        canvas?.drawOval(RectF(0f,220f,220f,420f),paint)
+
     }
 }
