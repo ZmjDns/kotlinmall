@@ -132,3 +132,104 @@ class OvalView: View{
 
     }
 }
+
+class LineView: View{
+    constructor(context: Context): super(context)
+    constructor(context: Context,@Nullable attrs: AttributeSet): super(context,attrs)
+    constructor(context: Context,@Nullable attrs: AttributeSet,@Nullable defStyleAttr: Int): super(context,attrs, defStyleAttr)
+
+    private val paint = Paint()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        paint.color = Color.BLACK
+        paint.strokeWidth = 20f
+        //画一条线
+        canvas?.drawLine(20f,20f,120f,120f,paint)
+
+        //画多条线
+        val points = floatArrayOf(200f,20f,200f,200f,150f,200f,300f,200f,200f,100f,280f,100f)
+        canvas?.drawLines(points,paint)
+
+    }
+}
+
+class RoundRect: View{
+    constructor(context: Context): super(context)
+    constructor(context: Context,@Nullable attrs: AttributeSet): super(context,attrs)
+    constructor(context: Context,@Nullable attrs: AttributeSet,@Nullable defStyleAttr: Int): super(context, attrs, defStyleAttr)
+
+    private val paint = Paint()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        paint.color = Color.BLACK
+        paint.strokeWidth = 20f
+        paint.style = Paint.Style.FILL
+        //画实心圆角矩形
+        canvas?.drawRoundRect(20f,20f,100f,100f,20f,20f,paint)
+
+        //空心矩形
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 5f
+        canvas?.drawRoundRect(120f,20f,220f,100f,20f,20f,paint)
+    }
+}
+
+class ArcView: View{
+    constructor(context: Context): super(context)
+    constructor(context: Context,@Nullable attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context,@Nullable attrs: AttributeSet,@Nullable defStyleAttr: Int): super(context, attrs, defStyleAttr)
+
+    private  val paint = Paint()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        val rect = RectF(20f,20f,260f,200f)
+
+        paint.style = Paint.Style.STROKE
+
+        //弧线
+        /**
+         * @param rect 椭圆
+         * @param startAngle 起始角度，x轴为正方向，
+         * @param sweepAngle 扫过的角度，顺时针为正方向
+         * @param useCenter 是否连线到圆心
+         */
+        canvas?.drawArc(rect,-110f,-100f,false,paint)
+        //空心扇形
+        paint.strokeWidth = 2f
+        canvas?.drawArc(rect,0f,-100f,true,paint)
+        //实心扇形
+        paint.style = Paint.Style.FILL
+        canvas?.drawArc(rect,10f,160f,true,paint)
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
