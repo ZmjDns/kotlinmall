@@ -90,3 +90,23 @@ class PathLine:View{
         canvas?.drawPath(path,paint)
     }
 }
+
+class CloseView:View {
+    constructor(context: Context): super(context)
+    constructor(context: Context,@Nullable attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context,@Nullable attrs: AttributeSet,@Nullable defStyle: Int): super(context, attrs,defStyle)
+
+    private val paint = Paint()
+    private val path = Path()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        paint.style = Paint.Style.STROKE
+
+        path.moveTo(100f, 100f)
+        path.lineTo(200f, 100f)
+        path.lineTo(150f, 150f)
+
+        canvas?.drawPath(path,paint)
+    }
+}
