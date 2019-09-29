@@ -107,6 +107,9 @@ class CloseView:View {
         path.lineTo(200f, 100f)
         path.lineTo(150f, 150f)
 
+        //封闭图形
+        path.close()
+
         canvas?.drawPath(path,paint)
     }
 }
