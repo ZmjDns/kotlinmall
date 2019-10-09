@@ -1,11 +1,10 @@
 package com.zmj.kotlinmall.learnUI1.widget
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import com.zmj.kotlinmall.R
 import org.jetbrains.annotations.Nullable
 
 /**
@@ -111,5 +110,23 @@ class CloseView:View {
         path.close()
 
         canvas?.drawPath(path,paint)
+    }
+}
+
+class BitmapView : View{
+    constructor(context: Context): super(context)
+    constructor(context: Context, @Nullable attrs: AttributeSet):super(context, attrs)
+    constructor(context: Context, @Nullable attrs: AttributeSet, @Nullable defStyle: Int): super(context, attrs,defStyle)
+
+    val paint = Paint()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        val bitmap = BitmapFactory.decodeResource(context.resources, R.mipmap.ic_launcher)
+
+        canvas?.drawBitmap(bitmap,200f,100f,paint)
+
+        canvas?.drawText("Helllo",200f,200f,paint)
     }
 }
