@@ -127,6 +127,7 @@ class BitmapView : View{
 
         canvas?.drawBitmap(bitmap,200f,100f,paint)
 
+        paint.textSize = 16f
         canvas?.drawText("Helllo",200f,200f,paint)
     }
 }
