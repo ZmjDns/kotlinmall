@@ -15,7 +15,8 @@ import org.jetbrains.annotations.Nullable
  * Time : 2019/10/10
  * Description :
  */
-class Practice2CircelView : View{
+class Practice3RectView : View{
+
     constructor(context: Context): super(context)
     constructor(context: Context, @Nullable attrs: AttributeSet): super(context, attrs)
     constructor(context: Context, @Nullable attrs: AttributeSet, @Nullable defStyle: Int): super(context, attrs,defStyle)
@@ -24,32 +25,10 @@ class Practice2CircelView : View{
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        //        练习内容：使用 canvas.drawCircle() 方法画圆
-        //        一共四个圆：1.实心圆 2.空心圆 3.蓝色实心圆 4.线宽为 20 的空心圆
-
+        //        练习内容：使用 canvas.drawRect() 方法画矩形
         paint.style = Paint.Style.FILL
-        paint.color = Color.RED
+        paint.color = Color.BLACK
 
-        canvas?.drawCircle(100f,100f,90f,paint)
-
-
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 1f
-
-        canvas?.drawCircle(300f,100f,90f,paint)
-
-        paint.style = Paint.Style.FILL
-        paint.color = Color.BLUE
-
-        canvas?.drawCircle(100f,300f,90f,paint)
-
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 20f
-
-        canvas?.drawCircle(300f,300f,90f,paint)
-
-
-
+        canvas?.drawRect(20f,20f,400f,400f,paint)
     }
-
 }
