@@ -10,6 +10,6 @@ package com.zmj.base.common
 class BaseConstant {
 
     companion object{
-        val Server_address = "http:192.168.1.101/"
+        val Server_address = "http:192.168.1.254:8080/"
     }
 }

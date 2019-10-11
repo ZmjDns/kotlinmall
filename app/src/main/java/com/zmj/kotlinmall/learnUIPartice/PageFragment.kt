@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewStub
 import com.zmj.kotlinmall.R
 import kotlinx.android.synthetic.main.fragment_page.*
 
@@ -44,17 +45,29 @@ class PageFragment: Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_page,container)
 
-        sampleStub.inflatedId = sampleLayoutRes!!
-        sampleStub.inflate()
+        /*val mySampleStub = view.findViewById<ViewStub>(R.id.sampleStub)
+        val myPracticeStub = view.findViewById<ViewStub>(R.id.practiceStub)
 
-        practiceStub.inflatedId = practiceLayoutRes!!
-        practiceStub.inflate()
+        mySampleStub.layoutResource = sampleLayoutRes!!
+        myPracticeStub.layoutResource = practiceLayoutRes!!
 
-        return view
+        mySampleStub.inflate()
+        myPracticeStub.inflate()*/
+
+        //inflater.inflate(R.layout.fragment_page,container)   //此方法报错无法获取布局
+        return inflater.inflate(R.layout.fragment_page,null,false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        sampleStub.layoutResource = sampleLayoutRes!!
+        practiceStub.layoutResource = practiceLayoutRes!!
+
+        sampleStub.inflate()
+        practiceStub.inflate()
+    }
 
 
 
