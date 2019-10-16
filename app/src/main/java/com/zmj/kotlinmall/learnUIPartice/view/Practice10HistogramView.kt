@@ -30,6 +30,14 @@ class Practice10HistogramView : View{
 
         paint.color = Color.GREEN
 
+        path.moveTo(50f,50f)
+        path.addRect(50f,50f,60f,300f,Path.Direction.CW)
+
+        path.moveTo(80f,20f)
+        path.addRect(80f,20f,90f,300f,Path.Direction.CW)
+
+        canvas?.drawPath(path,paint)
+
 
     }
 
