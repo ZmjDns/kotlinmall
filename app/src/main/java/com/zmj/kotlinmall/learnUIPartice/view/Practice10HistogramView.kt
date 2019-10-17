@@ -35,7 +35,7 @@ class Practice10HistogramView : View{
         path.addRect(50f,50f,90f,300f,Path.Direction.CW)
 
         path.moveTo(120f,20f)
-        path.addRect(120f,20f,1600f,300f,Path.Direction.CW)
+        path.addRect(120f,20f,160f,300f,Path.Direction.CW)
 
         canvas?.drawPath(path,paint)
 
