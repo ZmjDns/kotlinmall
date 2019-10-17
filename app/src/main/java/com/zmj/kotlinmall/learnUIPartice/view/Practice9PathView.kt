@@ -33,11 +33,11 @@ class Practice9PathView: View {
         paint.style = Paint.Style.FILL
         paint.strokeWidth = 2f
 
-        path.moveTo(50f,100f)
-        path.addArc(0f,0f,100f,100f,-180f,180f)
-        path.addArc(100f,0f,200f,100f,-180f,180f)
+        //path.moveTo(50f,100f)
+        path.addArc(0f,0f,100f,100f,-225f,225f)
+        path.addArc(100f,0f,200f,100f,-180f,225f)
         path.lineTo(100f,200f)
-        path.lineTo(0f,50f)
+        path.lineTo(14.65f,85.35f)
         //path.close()
 
         canvas?.drawPath(path,paint)
