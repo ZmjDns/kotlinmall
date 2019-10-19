@@ -25,12 +25,12 @@ class MainUiPracticeAct: AppCompatActivity() {
         pageModels.add(PageModel(R.layout.sample_circel,R.string.title_draw_circle,R.layout.practice_2_circel_view))
         pageModels.add(PageModel(R.layout.sample_rect,R.string.title_draw_rect,R.layout.practice_3_rect_view))
         pageModels.add(PageModel(R.layout.sample_point,R.string.title_draw_point,R.layout.practice_4_point_view))
-        pageModels.add(PageModel(R.layout.sample_oval,R.string.title_draw_oval,R.layout.practice_2_circel_view))
-        pageModels.add(PageModel(R.layout.sample_line,R.string.title_draw_line,R.layout.practice_2_circel_view))
-        pageModels.add(PageModel(R.layout.sample_round_rect,R.string.title_draw_round_rect,R.layout.practice_2_circel_view))
-        pageModels.add(PageModel(R.layout.sample_arc,R.string.title_draw_arc,R.layout.practice_2_circel_view))
-        pageModels.add(PageModel(R.layout.sample_path,R.string.title_draw_path,R.layout.practice_2_circel_view))
-        pageModels.add(PageModel(R.layout.sample_histogram,R.string.title_draw_histogram,R.layout.practice_2_circel_view))
+        pageModels.add(PageModel(R.layout.sample_oval,R.string.title_draw_oval,R.layout.practice_5_oval_view))
+        pageModels.add(PageModel(R.layout.sample_line,R.string.title_draw_line,R.layout.practice_6_line_view))
+        pageModels.add(PageModel(R.layout.sample_round_rect,R.string.title_draw_round_rect,R.layout.practice_7_round_rect_view))
+        pageModels.add(PageModel(R.layout.sample_arc,R.string.title_draw_arc,R.layout.practice_8_arc_view))
+        pageModels.add(PageModel(R.layout.sample_path,R.string.title_draw_path,R.layout.practice_9_path_view))
+        pageModels.add(PageModel(R.layout.sample_histogram,R.string.title_draw_histogram,R.layout.practice_10_histogram))
         pageModels.add(PageModel(R.layout.sample_pie_chart,R.string.title_draw_pie_chart,R.layout.practice_2_circel_view))
 
     }
