@@ -28,6 +28,7 @@ class Practice11PieChart: View {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+        paint.isAntiAlias = true
         paint.style = Paint.Style.FILL
         paint.color = Color.RED
 
@@ -36,8 +37,8 @@ class Practice11PieChart: View {
         paint.style = Paint.Style.STROKE
         paint.color = Color.GRAY
         paint.strokeWidth = 2f
-        path.moveTo(80f,150f)
-        path.rLineTo(80f,0f)
+        path.moveTo(20f,120f)
+        path.rLineTo(120f,0f)
         path.lineTo(173.3f,173.3f)
 
         canvas?.drawPath(path,paint)
@@ -45,14 +46,32 @@ class Practice11PieChart: View {
         paint.color = Color.YELLOW
         paint.style = Paint.Style.FILL
 
-        canvas?.drawArc(110f,100f,610f,600f,0f,-80f,true,paint)
+        //-80度到-45度 扇形
+        canvas?.drawArc(110f,100f,610f,600f,-80f,70f,true,paint)
 
+        //画线
         paint.color = Color.GRAY
         paint.style = Paint.Style.STROKE
-        path.moveTo(426.7f,173.3f)
-        path.lineTo(610f,100f)
+        path.moveTo(518.8f,158.2f)
+        path.rLineTo(40f,-40f)
         path.rLineTo(100f,0f)
+        canvas?.drawPath(path,paint)
+        //继续画-45度到0度 扇形
+        paint.color = Color.YELLOW
+        paint.style = Paint.Style.FILL
 
+        canvas?.drawArc(110f,100f,610f,600f,-45f,35f,true,paint)
+
+        //继续画-10度到0度 扇形
+        paint.color = Color.RED
+        paint.style = Paint.Style.FILL
+        canvas?.drawArc(110f,100f,610f,600f,-5f,10f,true,paint)
+
+        paint.style = Paint.Style.STROKE
+        paint.color = Color.GRAY
+        paint.strokeWidth = 2f
+        path.moveTo(610f,350f)
+        path.rLineTo(100f,0f)
         canvas?.drawPath(path,paint)
 
     }
