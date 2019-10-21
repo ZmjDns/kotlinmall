@@ -33,11 +33,27 @@ class Practice11PieChart: View {
 
         canvas?.drawArc(100f,100f,600f,600f,-180f,100f,true,paint)
 
-        paint.color = Color.RED
+        paint.style = Paint.Style.STROKE
+        paint.color = Color.GRAY
         paint.strokeWidth = 2f
         path.moveTo(80f,150f)
+        path.rLineTo(80f,0f)
+        path.lineTo(173.3f,173.3f)
+
+        canvas?.drawPath(path,paint)
+
+        paint.color = Color.YELLOW
+        paint.style = Paint.Style.FILL
+
+        canvas?.drawArc(110f,100f,610f,600f,0f,-80f,true,paint)
+
+        paint.color = Color.GRAY
+        paint.style = Paint.Style.STROKE
+        path.moveTo(426.7f,173.3f)
+        path.lineTo(610f,100f)
         path.rLineTo(100f,0f)
-        path.lineTo(173.3f,273.3f)
+
+        canvas?.drawPath(path,paint)
 
     }
 
