@@ -74,6 +74,34 @@ class Practice11PieChart: View {
         path.rLineTo(100f,0f)
         canvas?.drawPath(path,paint)
 
+        paint.color = Color.parseColor("#bbee23")
+        paint.style = Paint.Style.FILL
+
+        canvas?.drawArc(110f,100f,610f,600f,10f,50f,true,paint)
+        paint.color = Color.GRAY
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 2f
+
+        path.moveTo(570f,490f)
+        path.rLineTo(50f,0f)
+        path.rLineTo(50f,50f)
+        path.rLineTo(100f,0f)
+
+        canvas?.drawPath(path,paint)
+
+        paint.color = Color.parseColor("#007856")
+        paint.style = Paint.Style.FILL
+
+        canvas?.drawArc(110f,100f,610f,600f,70f,100f,true,paint)
+
+        paint.color = Color.GRAY
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 2f
+        path.moveTo(20f,500f)
+        path.rLineTo(100f,0f)
+        path.rLineTo(25f,-25f)
+
+        canvas?.drawPath(path,paint)
     }
 
 }
