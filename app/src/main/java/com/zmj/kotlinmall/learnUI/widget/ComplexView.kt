@@ -1,4 +1,4 @@
-package com.zmj.kotlinmall.learnUI1.widget
+package com.zmj.kotlinmall.learnUI.widget
 
 import android.content.Context
 import android.graphics.*
