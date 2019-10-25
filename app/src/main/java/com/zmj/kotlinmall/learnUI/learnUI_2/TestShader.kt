@@ -111,17 +111,56 @@ class TestBitmapShader: View{
 
     val bitmap = BitmapFactory.decodeResource(resources, R.drawable.batman)
 
+    //CLAMP
     val bitmapShader = BitmapShader(bitmap,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+    //MIRROR
+    val bitmapShaderMirror = BitmapShader(bitmap,Shader.TileMode.MIRROR,Shader.TileMode.MIRROR)
+    //REPEAT
+    val bitmapShaderRepeat = BitmapShader(bitmap,Shader.TileMode.REPEAT,Shader.TileMode.REPEAT)
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
         paint.shader = bitmapShader
 
-        canvas?.drawCircle(300f,300f,200f,paint)
 
+        //canvas?.drawBitmap(bitmap,20f,20f,paint)
+        canvas?.drawCircle(85f,84f,80f,paint)
 
+        paint.shader = bitmapShaderMirror
+        canvas?.drawRect(0f,200f,500f,700f,paint)
+
+        paint.shader = bitmapShaderRepeat
+        canvas?.drawRect(520f,200f,1020f,700f,paint)
     }
+}
+
+class TestComposerShader: View{
+    constructor(context: Context): super(context)
+    constructor(context: Context, @Nullable attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context, @Nullable attrs: AttributeSet, @Nullable defStyle: Int): super(context, attrs,defStyle)
+
+    val paint = Paint()
+
+    //第一个shader ： batman头像
+    val bitmapBatman = BitmapFactory.decodeResource(resources,R.drawable.batman)
+    val shaderBatman = BitmapShader(bitmapBatman,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+
+    //第二个shader： 从上倒下的渐变（由透明到黑色）
+    val bitmapLoglo = BitmapFactory.decodeResource(resources,R.drawable.chose)
+    val shaderLogo = BitmapShader(bitmapLoglo,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+
+    //结合两个Shader
+    val composerShader = ComposeShader(shaderBatman,shaderLogo,PorterDuff.Mode.SRC_OVER)
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        paint.shader = composerShader
+
+        canvas?.drawCircle(300f,300f,300f,paint)
+    }
+
 
 
 }
