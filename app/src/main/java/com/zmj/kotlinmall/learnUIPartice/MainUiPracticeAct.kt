@@ -31,7 +31,7 @@ class MainUiPracticeAct: AppCompatActivity() {
         pageModels.add(PageModel(R.layout.sample_arc,R.string.title_draw_arc,R.layout.practice_8_arc_view))
         pageModels.add(PageModel(R.layout.sample_path,R.string.title_draw_path,R.layout.practice_9_path_view))
         pageModels.add(PageModel(R.layout.sample_histogram,R.string.title_draw_histogram,R.layout.practice_10_histogram))
-        pageModels.add(PageModel(R.layout.sample_pie_chart,R.string.title_draw_pie_chart,R.layout.practice_2_circel_view))
+        pageModels.add(PageModel(R.layout.sample_pie_chart,R.string.title_draw_pie_chart,R.layout.practice_11_pie_chart))
 
     }
 
