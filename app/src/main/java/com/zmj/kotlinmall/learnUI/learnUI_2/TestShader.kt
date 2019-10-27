@@ -151,14 +151,16 @@ class TestComposerShader: View{
     val shaderLogo = BitmapShader(bitmapLoglo,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
 
     //结合两个Shader
-    val composerShader = ComposeShader(shaderBatman,shaderLogo,PorterDuff.Mode.SRC_OVER)
+    //val composerShader = ComposeShader(shaderBatman,shaderLogo,PorterDuff.Mode.SRC_OVER)
 
+    //挖空效果
+    val composerShader1 = ComposeShader(shaderBatman,shaderLogo,PorterDuff.Mode.DST_OUT)
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        paint.shader = composerShader
+        paint.shader = composerShader1
 
-        canvas?.drawCircle(300f,300f,300f,paint)
+        canvas?.drawCircle(85f,84f,80f,paint)
     }
 
 
