@@ -18,10 +18,10 @@ class TestColorFilter: View {
     constructor(context: Context,attributeSet: AttributeSet): super(context,attributeSet)
     constructor(context: Context,attributeSet: AttributeSet,selfSty: Int): super(context,attributeSet,selfSty)
 
-    val paint = Paint()
+    private val paint = Paint()
 
-    val bitmap = BitmapFactory.decodeResource(resources, R.drawable.hencoder)
-    val shader = BitmapShader(bitmap,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
+    private val bitmap = BitmapFactory.decodeResource(resources, R.drawable.hencoder)
+    private val shader = BitmapShader(bitmap,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP)
 
     /**
      * 颜色计算方法
@@ -31,7 +31,7 @@ class TestColorFilter: View {
      * G' = G * 0xff / 0xff + 0x00   //绿色保持不变
      * B' = B * 0xff / 0xff + 0x00
      */
-    val lightingColorFilter = LightingColorFilter(0x00ffff,0x000000)
+    private val lightingColorFilter = LightingColorFilter(0x00ffff,0x000000)
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
