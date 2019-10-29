@@ -162,7 +162,4 @@ class TestComposerShader: View{
 
         canvas?.drawCircle(85f,84f,80f,paint)
     }
-
-
-
 }
