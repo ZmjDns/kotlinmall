@@ -21,6 +21,7 @@ class MainUiPracticeAct: AppCompatActivity() {
     private val pageModels = ArrayList<PageModel>()
 
     init {
+        pageModels.add(PageModel(R.layout.sample_exercise,R.string.title_exercise,R.layout.sample_bitmap_shader))
         pageModels.add(PageModel(R.layout.sample_color,R.string.title_draw_color,R.layout.practice_1_color_view))
         pageModels.add(PageModel(R.layout.sample_circel,R.string.title_draw_circle,R.layout.practice_2_circel_view))
         pageModels.add(PageModel(R.layout.sample_rect,R.string.title_draw_rect,R.layout.practice_3_rect_view))

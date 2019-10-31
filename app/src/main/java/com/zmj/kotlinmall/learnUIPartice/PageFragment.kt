@@ -22,7 +22,7 @@ class PageFragment: Fragment() {
     @LayoutRes var sampleLayoutRes: Int? = null
     @LayoutRes var practiceLayoutRes: Int? = null
 
-    companion object instance{
+    companion object Instance{
         fun instance( @LayoutRes sampleLayoutRes: Int,@LayoutRes practiceLayoutRes: Int): PageFragment{
             val pageFragment = PageFragment()
             val bundle = Bundle()
