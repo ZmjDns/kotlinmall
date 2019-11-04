@@ -41,5 +41,6 @@ class TestXfermode : View{
 
         setLayerType(LAYER_TYPE_HARDWARE,paint)
 
+
     }
 }
