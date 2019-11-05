@@ -33,17 +33,15 @@ class RegisterActivity: BaseMvpActivity<RegisterPresenter>(),RegisterView{
 
         setContentView(R.layout.register_act)
 
-        //mPresenter = RegisterPresenter()
-        //mPresenter.mView = this
-        initInjection()
+        mPresenter = RegisterPresenter()
+        mPresenter.mView = this
+        //initInjection()
 
         register.setOnClickListener { mPresenter.register("","","") }
     }
 
-    private fun initInjection() {
-        DaggerUserComponent.builder().userModule(UserModule()).build().inject(this)
-        mPresenter.mView = this
-    }
-
-
+//    private fun initInjection() {
+//        DaggerUserComponent.builder().userModule(UserModule()).build().inject(this)
+//        mPresenter.mView = this
+//    }
 }
