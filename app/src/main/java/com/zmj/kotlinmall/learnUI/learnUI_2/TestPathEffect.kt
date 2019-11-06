@@ -30,7 +30,8 @@ class TestPathEffect: View {
 
         path.moveTo(10f,10f)
         path.rLineTo(50f,50f)
-        path.rLineTo(40f,3f)
+        path.rLineTo(40f,30f)
+        path.rLineTo(20f,10f)
 
         paint.pathEffect = pathEffect
         canvas?.drawPath(path,paint)
