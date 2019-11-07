@@ -14,13 +14,15 @@
     <uses-permission android:name="com.zmj.kotlinmall.RECEIVE_NET_INFO"/>
 
     <application
+            android:name=".App"
             android:allowBackup="false"
             tools:replace="android:allowBackup"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:hardwareAccelerated="false">
 
         <!--此receiver，可以动态在代码中进行注册-->
         <receiver android:name=".broadcast.NetChangeReceiver"
@@ -41,13 +43,24 @@
             </intent-filter>
         </receiver-->
 
-        <activity android:name=".broadcast.SendBroadCastActivity">
+        <activity android:name=".learnUIPartice.MainUiPracticeAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--bottomSheet-->
+        <activity android:name=".bottomsheet.TestBottomSheet"/>
+
+        <!--自定义View测试-->
+        <activity android:name=".broadcast.SendBroadCastActivity"/>
+
+        <activity android:name=".learnUI.SelfViewAct"/>
+
+
+
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
