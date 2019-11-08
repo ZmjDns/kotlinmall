@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <com.zmj.kotlinmall.learnUI.learnUI_2.TestShader
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+    <com.zmj.kotlinmall.learnUI.learnUI_2.TestRadioGradientShader
+            android:layout_width="match_parent"
+            android:layout_height="350dp"/>
+    <com.zmj.kotlinmall.learnUI.learnUI_2.TestSweepGradient
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+</LinearLayout>
