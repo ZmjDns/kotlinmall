@@ -1,11 +1,10 @@
 package com.zmj.kotlinmall.learnUI.learnUI_2
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import com.zmj.kotlinmall.R
 import org.jetbrains.annotations.Nullable
 
 /**
@@ -34,9 +33,26 @@ class TestShadowLayer: View {
         paint.setShadowLayer(10f,0f,0f,Color.RED);
 
         canvas?.drawText("Hello ZMJ",10f,10f,paint)
+    }
+}
 
+class TestMaskFilter:View{
+    constructor(context: Context): super(context)
+    constructor(context: Context, @Nullable attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context, @Nullable attrs: AttributeSet, @Nullable defStyle: Int): super(context, attrs,defStyle)
 
+    var bitmap = BitmapFactory.decodeResource(resources,R.drawable.batman)
+    var blurMaskFilter = BlurMaskFilter(50f,BlurMaskFilter.Blur.OUTER)
+
+    var paint = Paint();
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        paint.setMaskFilter(blurMaskFilter)
+
+        canvas?.drawBitmap(bitmap,10f,10f,paint)
     }
 
-
 }
+
