@@ -53,6 +53,20 @@ class TestMaskFilter:View{
 
         canvas?.drawBitmap(bitmap,10f,10f,paint)
     }
+}
+
+class TestEmbossMaskFliter: View{
+    constructor(context: Context): super(context)
+    constructor(context: Context, @Nullable attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context, @Nullable attrs: AttributeSet, @Nullable defStyle: Int): super(context, attrs,defStyle)
+
+    val paint = Paint()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+
+        //paint.setMaskFilter(EmbossMaskFilter())
+    }
 
 }
 
