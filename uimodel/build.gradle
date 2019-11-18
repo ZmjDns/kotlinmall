@@ -22,9 +22,17 @@ android {
         }
     }
 
-    sourceSet{
+    sourceSets{
         main{
-
+            if (isUiModel.toBoolean()){//当作一个库
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                //release模式下排除debug文件夹中所有的java文件
+//                java{
+//                    execlude 'debug/**'
+//                }
+            }else {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            }
         }
     }
 
