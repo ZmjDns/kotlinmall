@@ -1,5 +1,10 @@
 package com.zmj.uimodel.lesson3
 
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+import org.jetbrains.annotations.Nullable
+
 /**
  * Author : Zmj
  * Blog : https://blog.csdn.net/Zmj_Dns
@@ -7,5 +12,9 @@ package com.zmj.uimodel.lesson3
  * Time : 2019/11/20
  * Description :
  */
-class TextViewPractice {
+class TextViewPractice: View {
+    constructor(context: Context): super(context)
+    constructor(context: Context,@Nullable attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context,@Nullable attrs: AttributeSet,@Nullable defStyle: Int): super(context, attrs,defStyle)
+
 }
