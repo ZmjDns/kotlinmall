@@ -1,4 +1,9 @@
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library'
+if(isUiModel.toBoolean()){
+    apply plugin: 'com.android.library'
+}else {
+    apply plugin: 'com.android.application'
+}
 
 android {
     compileSdkVersion 29
