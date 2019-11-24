@@ -14,10 +14,10 @@ android {
         versionCode 1
         versionName "1.0"
 
-        //开启分包
+        /*//开启分包
         multiDexEnabled true
         //不分包（保留在主包中的类）的配置
-        multiDexKeepFile file('multidex-config.txt')
+        multiDexKeepFile file('multidex-config.txt')*/
 
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -40,6 +40,9 @@ dependencies {
 
     if (isUserModel.toBoolean()){
         api project(path: ':usercenter')
+    }
+    if(isUiModel.toBoolean()){
+        api project(path: ':uimodel')
     }
 
     testImplementation 'junit:junit:4.12'
