@@ -34,7 +34,7 @@ open class BaseMvpActivity<T:BasePresenter<*>>: BaseActivity(),BaseView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initActivityInjection()
+        //initActivityInjection()
     }
 
     private fun initActivityInjection() {
