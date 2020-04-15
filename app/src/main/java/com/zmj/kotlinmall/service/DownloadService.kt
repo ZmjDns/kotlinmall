@@ -1,13 +1,11 @@
 package com.zmj.kotlinmall.service
 
-import android.app.Notification
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.app.Service
+import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Binder
+import android.os.Build
 import android.os.Environment
 import android.os.IBinder
 import android.support.v4.app.NotificationCompat
@@ -69,6 +67,7 @@ class DownloadService: Service() {
 
     override fun onCreate() {
         super.onCreate()
+        getNotificationManager()
         Log.i("DownloadService","onCreate....")
     }
 
@@ -130,7 +129,12 @@ class DownloadService: Service() {
     }
 
     private fun getNotificationManager(): NotificationManager{
-        return getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val channel = NotificationChannel("100","name",NotificationManager.IMPORTANCE_LOW)
+            notificationManager.createNotificationChannel(channel)
+        }
+        return notificationManager
     }
 
     private fun getNotification(title: String,progress: Int): Notification {
