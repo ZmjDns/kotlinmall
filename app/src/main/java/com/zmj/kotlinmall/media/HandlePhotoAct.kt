@@ -50,6 +50,10 @@ class HandlePhotoAct: BaseActivity() {
             permission()
         }
 
+        mediaPlayer.setOnClickListener {
+            startActivity(Intent(this,MediaPlayerAct::class.java))
+        }
+
     }
 
     fun permission(){
