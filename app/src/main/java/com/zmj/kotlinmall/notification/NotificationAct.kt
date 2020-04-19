@@ -41,7 +41,7 @@ class NotificationAct: BaseActivity(){
 
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            createNotificationChannel(channelId,channelName,NotificationManager.IMPORTANCE_MAX)
+            createNotificationChannel(channelId,channelName,NotificationManager.IMPORTANCE_DEFAULT)
         }
 
 
